@@ -1,0 +1,26 @@
+{
+  "projectRoot": "backend",
+  "python": "backend/.venv/bin/python",
+  "settingsModule": "config.settings.local",
+  "database": "default",
+  "mcp": {
+    "enabled": true,
+    "serverName": "django_orm",
+    "command": ["uv", "run", "python", "manage.py", "mcp_serve"],
+    "env": {}
+  },
+  "safety": {
+    "readOnly": true,
+    "allowWrites": false,
+    "allowCodeExecution": false,
+    "allowNonLocalDb": false,
+    "maxRows": 200,
+    "statementTimeoutMs": 5000,
+    "maskedFields": ["iban", "ssn"]
+  },
+  "analysis": {
+    "autoScanOnEdit": true,
+    "excludeDirs": ["legacy"],
+    "maxFiles": 2000
+  }
+}

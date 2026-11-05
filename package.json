@@ -1,0 +1,52 @@
+{
+  "name": "cline-django-orm-plugin",
+  "version": "0.1.0",
+  "description": "Cline plugin for Django ORM: local DB MCP server wiring, query tooling and N+1 detection",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inexium/cline-django-orm-plugin.git"
+  },
+  "keywords": [
+    "cline",
+    "cline-plugin",
+    "django",
+    "orm",
+    "mcp",
+    "n+1"
+  ],
+  "bugs": {
+    "url": "https://github.com/inexium/cline-django-orm-plugin/issues"
+  },
+  "homepage": "https://github.com/inexium/cline-django-orm-plugin#readme",
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7"
+  },
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "docs"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "cline": {
+    "plugins": [
+      {
+        "paths": [
+          "./dist/index.js"
+        ]
+      }
+    ]
+  }
+}
